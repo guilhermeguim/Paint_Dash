@@ -1,0 +1,292 @@
+
+
+.btn-primary {
+    font-size: 2.5vw;
+    margin-left: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 0.8rem;
+}
+
+.btn-primary:hover {
+    border-radius: 0.8rem;
+}
+
+.filter-label{
+    margin-left: 0%;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 2.0vw;
+    color: #012C5E;
+    margin-bottom: 5%;
+}
+
+.button-container{
+    margin-left: 2%;
+    margin-bottom: 2%
+}
+
+.form-select{
+    font-size: 1.8vw;
+}
+
+.badge{
+    font-size: 1.2vw;
+    color: black;
+}
+
+.custom-button-10{
+
+    background-color: rgba(255, 212, 0, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-10:hover{
+    background-color: rgba(255, 212, 0, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-9{
+
+    background-color: rgba(255, 216, 25, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-9:hover{
+    background-color: rgba(255, 216, 25, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-8{
+
+    background-color: rgba(255, 221, 50, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-8:hover{
+    background-color: rgba(255, 221, 50, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-7{
+
+    background-color: rgba(255, 225, 76, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-7:hover{
+    background-color: rgba(255, 225, 76, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-6{
+
+    background-color: rgba(255, 229, 102, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-6:hover{
+    background-color: rgba(255, 229, 102, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-5{
+
+    background-color: rgba(255, 233, 127, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-5:hover{
+    background-color: rgba(255, 233, 127, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-4{
+
+    background-color: rgba(255, 238, 153, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-4:hover{
+    background-color: rgba(255, 238, 153, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-3{
+
+    background-color: rgba(255, 242, 178, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-3:hover{
+    background-color: rgba(255, 242, 178, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-2{
+
+    background-color: rgba(255, 246, 204, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-2:hover{
+    background-color: rgba(255, 246, 204, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-1{
+
+    background-color: rgba(255, 250, 229, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-1:hover{
+    background-color: rgba(255, 250, 229, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.custom-button-0{
+
+    background-color: rgba(255, 255, 255, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    --bs-btn-active-color: rgb(0, 0, 0);
+    --bs-btn-active-bg: rgba(255, 212, 0, 1);
+    --bs-btn-active-border-color: rgb(0, 0, 0);
+}
+
+.custom-button-0:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+    border-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+@media (min-width: 1280px) and (max-width: 1499px){
+    .btn-primary {
+        font-size: 1.5vw;
+        margin-left: 3%;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 0.6%;
+        padding-bottom: 0.6%;
+        border-radius: 0.6rem;
+    }
+    
+    .btn-primary:hover {
+        border-radius: 0.6rem;
+    }
+    
+    .filter-label{
+        margin-left: 0%;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 1.2vw;
+        color: #012C5E;
+        margin-bottom: 5%;
+    }
+    
+    .button-container{
+        margin-left: 2%;
+        margin-bottom: 2%
+    }
+    
+    .form-select{
+        font-size: 1.0vw;
+    }
+    
+    .badge{
+        font-size: 0.8vw;
+        color: black;
+    }
+}
+
+@media (min-width: 1500px){
+    .btn-primary {
+        font-size: 1.5vw;
+        margin-left: 3%;
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 0.6%;
+        padding-bottom: 0.6%;
+        border-radius: 0.8rem;
+    }
+    
+    .btn-primary:hover {
+        border-radius: 0.8rem;
+    }
+    
+    .filter-label{
+        margin-left: 0%;
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 1.5vw;
+        color: #012C5E;
+        margin-bottom: 5%;
+    }
+    
+    .button-container{
+        margin-left: 2%;
+        margin-bottom: 2%
+    }
+    
+    .form-select{
+        font-size: 1.2vw;
+    }
+    
+    .badge{
+        font-size: 0.6vw;
+        color: black;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+  </head>
+  <body>
+    {% extends 'index.html' %} {% set active_page = 'profile' %} {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/profile.css') }}" />
+    <script src="{{ url_for('static', filename = 'js/btn_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+
+    <div class="container">
+        <h1>Profile</h1>
+        <a class="btn btn-primary" href="{{ url_for('profile') }}" role="button">Return</a>
+    </div>
+
+    <div class="user-data">
+        <form  method="post" class="row g-3 needs-validation" action="/edit_pwd_route" novalidate>
+
+            <div class="row">
+                <label for="inputCurr" class="form-label">Current Password:</label>
+                <input value="" name="current_password" type="password" class="form-control edit-pwd" id="inputCurr" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Use letters and numbers, minimum length: 6 characters</div>
+            </div>
+            <div class="row">
+                <label for="inputOld" class="form-label">New Password:</label>
+                <input value="" name="new_password" type="password" class="form-control edit-pwd" id="inputOld" pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Use letters and numbers, minimum length: 6 characters</div>
+            </div>
+            <div class="row">
+                <label for="inputConfOld" class="form-label">Confirm New Password:</label>
+                <input value="" name="confirm_new_password" type="password" class="form-control edit-pwd" id="inputConfOld" required />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Use letters and numbers, minimum length: 6 characters</div>
+            </div>
+            {% if error|default(None) == 0 %}
+            {% elif error|default(None) == 1 %}
+            <div id="errorMessage" class="alert alert-danger" style="">Password do not match</div>
+            {% elif error|default(None) == 2 %}
+            <div id="errorMessage" class="alert alert-danger" style="">Incorrect Password</div>
+            {% else %}
+            {% endif %}
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary save-btn">Save</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+    {% endblock %}
+  </body>
+</html>

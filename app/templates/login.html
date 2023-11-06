@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-5.3.0/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/login.css') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+    </head>
+    <body>
+        <header>
+        </header>
+
+        <div class="content-container login">
+            <div class="card text-center mb-3">
+                <div class="card-body">
+                    <form id="login-form" action="/login" method="post">
+                        <img id="logo" src="{{ url_for('static', filename='icons/Hyundai_Logo_Hor_Blue.png') }}" alt="Hyundai logo" class="logo">
+                        <h2 class="card-title text-uppercase">Login</h2>
+                        <p class="card-text">Please enter your login and password!</p>
+                        
+                        <div class="input-form">
+                            <div class="form-floating mb-3">
+                                <input type="hmc" class="form-control custom-input" name="hmc" id="floatingInput" placeholder="3710XXXX">
+                                <label for="floatingInput">HMC</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control custom-input" name="password" id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                            </div>
+                            {% if error|default(None) == 0 %}
+                            {% elif error|default(None) == 1 %}
+                            <div id="errorMessage" class="alert alert-danger" style="">Incorrect HMC</div>
+                            {% elif error|default(None) == 2 %}
+                            <div id="errorMessage" class="alert alert-danger" style="">Incorrect Password</div>
+                            {% else %}
+                            {% endif %}
+
+                        </div>
+
+                        <p><a class="forgot" data-bs-toggle="modal" data-bs-target="#exampleModal">Forgot password?</a></p>
+                        <p><a class="forgot"  href="{{ url_for('register') }}">Do not have an account?</a></p>
+        
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel" style="font-weight: bold;">Forgot Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p style="font-weight: bold;">Please contact admin to reset your password.</p>
+                <p style="font-size: 1.0vw;">Guilherme Guim</p>
+                <p style="font-size: 1.0vw;">guilherme.guim@Hyundai-Brasil.com</p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-bs-dismiss="modal" >OK</button>
+                </div>
+            </div>
+            </div>
+        </div>
+  
+        
+        <script src="{{ url_for('static', filename = 'bootstrap-5.3.0/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/btn_manager.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    {% extends 'index.html' %}
+    {% set active_page = 'dashboard' %}
+    {% block content %}
+      <link rel="stylesheet" href="{{ url_for('static', filename = 'css/dash_style.css') }}" />
+      <script type="text/javascript" src="{{ url_for('static', filename='js/socket.io.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='js/plotly.js') }}" charset="UTF-8"></script>
+      <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename = 'js/update_dash.js') }}"></script>
+      <div class="container">
+        <h1>Dashboard</h1>
+        <a class="btn btn-primary" href="{{ url_for('ext_map') }}" role="button">Heatmap</a>
+      </div>
+
+      <div class="container text-center grid-display portrait-display">
+        
+        <div class="row">
+          <div class="col-4 col-xl-2 col-xxl-2">
+            <h2 class="today1">Today Count</h2>
+            <p class="total-events" id="total-events">{{ total_events_today }}</p>
+          </div>
+          <div class="col-4 col-xl-2 align-items-center">
+            <h2 class="today2">Today Count</h2>
+            <p id="total-1">1st Shift: {{ shift1 }}</p>
+            <p id="total-2">2nd Shift: {{ shift2 }}</p>
+            <p id="total-3">3rd Shift: {{ shift3 }}</p>
+          </div>
+          <div class="col-4 col-xl-2 col-xxl-2">
+            <h2 class="col-by-side">Count by Side</h2>
+            <p id="graph2">
+              <script>
+                // Parse the graph JSON passed from Flask
+                var graphJSON = {{ graph_json2|safe }};
+        
+                // Render the graph using Plotly
+                Plotly.newPlot('graph2', graphJSON.data, graphJSON.layout);
+                </script>
+            </p>
+          </div>
+
+          <div class="col-6 col-xl-3 col-xxl-3">
+            <h2 class="daily-by-location-2">Count By Side Last 2h(RH)</h2>
+            <p id="graph7">
+              <script>
+              // Parse the graph JSON passed from Flask
+              var graphJSON = {{ graph_json7|safe }};
+      
+              // Render the graph using Plotly
+              Plotly.newPlot('graph7', graphJSON.data, graphJSON.layout);
+              </script>
+            </p>
+          </div>
+          <div class="col-6 col-xl-3 col-xxl-3">
+            <h2 class="daily-by-location-2">Count By Side Last 2h(LH)</h2>
+            <p id="graph8">
+              <script>
+              // Parse the graph JSON passed from Flask
+              var graphJSON = {{ graph_json8|safe }};
+      
+              // Render the graph using Plotly
+              Plotly.newPlot('graph8', graphJSON.data, graphJSON.layout);
+              </script>
+            </p>
+          </div>
+        </div>
+
+        <div class="row row2">
+          <div class="col-9 col-xl-4">
+            <h2 class="daily-by-local">Daily Count by Local Type</h2>
+            <p id="graph1">
+              <script>
+                // Parse the graph JSON passed from Flask
+                var graphJSON = {{ graph_json1|safe }};
+        
+                // Render the graph using Plotly
+                Plotly.newPlot('graph1', graphJSON.data, graphJSON.layout);
+              </script>
+            </p>
+          </div>
+          <div class="col-3 col-xl-2">
+            <h2 class="col-by-local">Count by Local</h2>
+            <p id="graph4">
+              <script>
+                // Parse the graph JSON passed from Flask
+                var graphJSON = {{ graph_json4|safe }};
+        
+                // Render the graph using Plotly
+                Plotly.newPlot('graph4', graphJSON.data, graphJSON.layout);
+              </script>
+            </p>
+          </div>
+
+
+            <div class="col-4 col-xl-2">
+              <h2 class="col-by-shift">Count by Shift</h2>
+              <p id="graph9">
+                <script>
+                  // Parse the graph JSON passed from Flask
+                  var graphJSON = {{ graph_json9|safe }};
+          
+                  // Render the graph using Plotly
+                  Plotly.newPlot('graph9', graphJSON.data, graphJSON.layout);
+                </script>
+              </p>
+            </div>
+            <div class="col-8  col-xl-4">
+              <h2 class="">Daily Count by Shift</h2>
+              <p id="graph3">
+                <script>
+                  // Parse the graph JSON passed from Flask
+                  var graphJSON = {{ graph_json3|safe }};
+          
+                  // Render the graph using Plotly
+                  Plotly.newPlot('graph3', graphJSON.data, graphJSON.layout);
+                </script>
+              </p>
+            </div>
+        </div>
+  
+        <div class="row row4">
+          <div class="col-6">
+            <h2 class="daily-by-location">Count By Side Total(RH)</h2>
+            <p id="graph5">
+              <script>
+                // Parse the graph JSON passed from Flask
+                var graphJSON = {{ graph_json5|safe }};
+        
+                // Render the graph using Plotly
+                Plotly.newPlot('graph5', graphJSON.data, graphJSON.layout);
+              </script>
+            </p>
+          </div>
+          <div class="col-6">
+            <h2 class="daily-by-location">Count By Side Total(LH)</h2>
+            <p id="graph6">
+              <script>
+                // Parse the graph JSON passed from Flask
+                var graphJSON = {{ graph_json6|safe }};
+        
+                // Render the graph using Plotly
+                Plotly.newPlot('graph6', graphJSON.data, graphJSON.layout);
+              </script>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    {% endblock %}
+  </body>
+</html>

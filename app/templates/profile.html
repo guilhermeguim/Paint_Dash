@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+  </head>
+  <body>
+    {% extends 'index.html' %} {% set active_page = 'profile' %} {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/profile.css') }}" />
+    <script src="{{ url_for('static', filename = 'js/btn_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+
+    <div class="container">
+        <h1>Profile</h1>
+        <a class="btn btn-primary" href="{{ url_for('logout') }}" role="button">Logout</a>
+    </div>
+    <div class="user-data">
+      <p><b>HMC:</b> {{ data[1] }}</p>
+      <p><b>Name:</b> {{ data[3] }}</p>
+      <p><b>Last Update:</b> {{ data[2] }}</p>
+    </div>
+
+    <div class="container">
+        <a class="btn btn-primary" href="{{ url_for('edit_profile') }}" role="button">Edit Data</a>
+        <a class="btn btn-primary" href="{{ url_for('edit_pwd') }}" role="button">Change Password</a>
+    </div>
+    {% endblock %}
+  </body>
+</html>

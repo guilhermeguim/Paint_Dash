@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'bootstrap-5.3.0/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/login.css') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register</title>
+    </head>
+    <body>
+        <header>
+        </header>
+
+        <div class="content-container register">
+            <div class="card text-center mb-3">
+                <div class="card-body">
+                    <form id="login-form" class="needs-validation" action="/register_user" method="post" novalidate>
+                        <img id="logo" src="{{ url_for('static', filename='icons/Hyundai_Logo_Hor_Blue.png') }}" alt="Hyundai logo" class="logo">
+                        <h2 class="card-title text-uppercase">Register</h2>
+                        <p class="card-text">Please fill in the fields below to register!</p>
+                        
+                        <div class="input-form">
+                            <div class="form-floating mb-3">
+                                <input type="hmc" class="form-control custom-input" name="hmc" id="floatingInput" placeholder="3710XXXX" pattern="^[0-9]{8}$" required />
+                                <label for="floatingInput">HMC</label>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Use numbers only, maximum length: 8 digits</div>
+                            </div>
+                            <div class="form-floating">
+                                <input type="name" class="form-control custom-input" name="name" id="floatingName" placeholder="Name" pattern="^^[A-Za-z ]+$" required />
+                                <label for="floatingName">Full Name</label>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Do not use special characters or numbers</div>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control custom-input" name="password" id="floatingPassword" placeholder="Password" pattern="^(?=.*[a-zA-Z])(?=.*[0-9]).{6,}$" required />
+                                <label for="floatingPassword">Password</label>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Use letters and numbers, minimum length: 6 characters</div>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control custom-input" name="confirm_password" id="floatingConfirmPassword" placeholder="Password" required />
+                                <label for="floatingConfirmPassword">Confirm Password</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" class="form-control custom-input" name="master" id="floatingMaster" placeholder="Master Key" required />
+                                <label for="floatingMaster">Master Key</label>
+                            </div>
+                            {% if error|default(None) == 0 %}
+                            {% elif error|default(None) == 1 %}
+                            <div id="errorMessage" class="alert alert-danger" style="">HMC Already Registered</div>
+                            {% elif error|default(None) == 2 %}
+                            <div id="errorMessage" class="alert alert-danger" style="">Empty Password</div>
+                            {% elif error|default(None) == 3 %}
+                            <div id="errorMessage" class="alert alert-danger" style="">Passwords do not match</div>
+                            {% elif error|default(None) == 4 %}
+                            <div id="errorMessage" class="alert alert-danger" style="">Wrong Master Key</div>
+                            
+                            {% else %}
+                            {% endif %}
+                        </div>
+        
+                        <p><a class="forgot" href="{{ url_for('index') }}">Already have an account?</a></p>
+        
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'bootstrap-5.3.0/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/btn_manager.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    </body>
+</html>

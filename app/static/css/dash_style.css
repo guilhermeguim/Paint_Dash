@@ -1,0 +1,246 @@
+.container{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    max-width: 2000px;
+}
+
+.grid-display{
+    display: block;
+    
+}
+
+.btn-primary {
+    display: flex;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 3vw;
+    margin-left: 5%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #012C5E;
+    color: #D0D0D0;
+    border-radius: 1.2rem;
+    border-color: #012C5E;
+    --bs-btn-active-bg: #264971;
+    --bs-btn-active-border-color: #264971;
+    --bs-btn-active-color: #D0D0D0;
+}
+
+
+.btn-primary:hover {
+
+    background-color: #264971;
+    color: #D0D0D0;
+    border-radius: 1.2rem;
+    border-color: #264971;
+}
+
+.container h1{
+    display: flex;
+    align-items: center;
+    margin-right: 3%;
+}
+
+h2{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 2vw;
+    color: #012C5E;
+    
+}
+
+p{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 2.5vw;
+    color: #012C5E;
+
+}
+
+
+.total-events{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 11vw;
+    color: #012C5E;
+}
+
+.col-by-shift{
+    margin-bottom: 0%;
+}
+
+.col-by-side{
+    margin-bottom: 10%;
+}
+
+.today1{
+    margin-bottom: 10%;
+}
+
+.today2{
+    margin-bottom: 16%;
+}
+
+.daily-by-local{
+    margin-top: 1vh;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.col-by-local{
+    margin-top: 1vh;
+}
+
+.daily-by-location-2{
+    margin-top: 5%;
+}
+
+.row3{
+    margin-top: 0%;
+}
+
+.row4{
+    margin-top: 1%;
+}
+
+@media (min-width: 1025px) {
+
+}
+
+@media (min-width: 1024px) and (max-width: 1279px){
+    .btn-primary {
+        font-size: 3vw;
+        margin-right: 3%;
+        padding-left: 4%;
+        padding-right: 4%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        border-radius: 0.8rem;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1499px){
+    .btn-primary {
+        font-size: 1.5vw;
+        margin-left: 5%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        border-radius: 0.8rem;
+    }
+
+    .btn-primary:hover {
+        border-radius: 0.8rem;
+    }
+
+    h2{
+        font-size: 1.2vw;
+    }
+
+    .total-events{
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 6vw;
+        color: #012C5E;
+        margin-bottom: 5%;
+    }
+
+    .today1{
+        margin-bottom: 3%;
+    }
+
+    p{
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 1.2vw;
+        color: #012C5E;
+        margin-bottom: 5%;
+    
+    }
+
+    .daily-by-location-2{
+        margin-top: 0%;
+    }
+    
+    
+    .col-by-local{
+        margin-top: 0vh;
+    }
+
+    .daily-by-local{
+        margin-top: 0vh;
+    }
+
+    .container{
+        margin-top: 1%;
+    }
+}
+
+
+
+@media (min-width: 1500px){
+    .btn-primary {
+        font-size: 1.3vw;
+        margin-left: 3%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 0.7%;
+        padding-bottom: 0.7%;
+        border-radius: 0.8rem;
+    }
+
+    .btn-primary:hover {
+        border-radius: 0.8rem;
+    }
+
+    h2{
+        font-size: 1.2vw;
+    }
+
+    .total-events{
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 7vw;
+        color: #012C5E;
+        margin-bottom: 5%;
+    }
+
+    .today1{
+        margin-bottom: 3%;
+    }
+
+    p{
+        font-family: 'Montserrat';
+        font-weight: bold;
+        font-size: 1.4vw;
+        color: #012C5E;
+        margin-bottom: 5%;
+    
+    }
+
+    .daily-by-location-2{
+        margin-top: 0%;
+    }
+    
+    
+    .col-by-local{
+        margin-top: 0vh;
+    }
+
+    .daily-by-local{
+        margin-top: 0vh;
+    }
+
+    .container{
+        margin-top: 1%;
+    }
+}
+

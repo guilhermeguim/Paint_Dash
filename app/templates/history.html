@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>History</title>
+
+  </head>
+  <body>
+    {% extends "index.html" %}
+    {% set active_page = "history" %}
+    {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/history_style.css') }}" />
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/del_btn_manager.js') }}"></script>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='js/socket.io.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/table_update.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/export.js') }}"></script>
+
+    <body>
+      <div>
+        <div class="row justify-content-md">
+          <div class="container">
+            <h1>History</h1>
+            <div class="button-container">
+              <div class="group-btn">
+                <label for="type-dropdown" id="drop-menu" class="filter-label">Type Filter:</label>
+                <select class="form-select" aria-label="Default select example" id="type-dropdown">
+                  <option value="all">All</option>
+                  <option value="interior">Interior</option>
+                  <option value="exterior">Exterior</option>
+                </select>
+              </div>
+              <div class="group-btn">
+                <label for="side-dropdown" id="drop-menu" class="filter-label">Side Filter:</label>
+                <select class="form-select" aria-label="Default select example" id="side-dropdown">
+                  <option value="all">All</option>
+                  <option value="rh">RH</option>
+                  <option value="lh">LH</option>
+                </select>
+              </div>
+              <div class="group-btn">
+                <label for="location-dropdown" id="drop-menu" class="filter-label">Location Filter:</label>
+                <select class="form-select" aria-label="Default select example" id="location-dropdown">
+                  <option value="all">All</option>
+                  <option value="side rh">Side RH</option>
+                  <option value="side length_is">Side LH</option>
+                  <option value="fender">Fender</option>
+                  <option value="rear door">Rear Door</option>
+                  <option value="front door">Front Door</option>
+                  <option value="hood">Hood</option>
+                  <option value="roof">Roof</option>
+                  <option value="tail gate">Tail Gate</option>
+                  <option value="trunk lid">Trunk Lid</option>
+                  <option value="back pnl">Back PNL</option>
+                </select>
+              </div>
+            </div>
+            <div class="button-container">
+              <div class="group-btn">
+                <label for="region-dropdown" id="drop-menu" class="filter-label">Region Filter:</label>
+                <select class="form-select" aria-label="Default select example" id="region-dropdown">
+                  <option value="all">All</option>
+                  <option value="1,1">1,1</option>
+                  <option value="1,2">1,2</option>
+                  <option value="1,3">1,3</option>
+                  <option value="1,4">1,4</option>
+                  <option value="1,5">1,5</option>
+                  <option value="2,1">2,1</option>
+                  <option value="2,2">2,2</option>
+                  <option value="2,3">2,3</option>
+                  <option value="2,4">2,4</option>
+                  <option value="2,5">2,5</option>
+                  <option value="3,1">3,1</option>
+                  <option value="3,2">3,2</option>
+                  <option value="3,3">3,3</option>
+                  <option value="3,4">3,4</option>
+                  <option value="3,5">3,5</option>
+                  <option value="4,1">4,1</option>
+                  <option value="4,2">4,2</option>
+                  <option value="4,3">4,3</option>
+                  <option value="4,4">4,4</option>
+                  <option value="4,5">4,5</option>
+                </select>
+              </div>
+              <div class="group-btn">
+                <label for="date-dropdown" id="drop-menu" class="filter-label">Date Filter:</label>
+                <select class="form-select" aria-label="Default select example" id="date-dropdown">
+                  <option value="all">Last 10 days</option>
+                  {% for date in dates %}
+                  <option value="{{date}}">{{date}}</option>
+                  {% endfor %}1
+                </select>
+              </div>
+            </div>
+
+            <div class="button-container">
+              <button type="button" class="btn btn-primary buttons" id="filter-button" onclick="go_btn()">Filter</button>
+              <button type="button" class="btn btn-warning buttons" id="export-button" onclick="downloadFile()">Export</button>
+          </div>
+            </div>
+          </div>
+
+          <div class="table-container" id="table-container">
+            <table class="table table-dark table-striped table-hover table-bordered">
+              <thead id="t_head">
+                <tr>
+                  <th scope="col" class="text-center">ID</th>
+                  <th scope="col" class="text-center">TYPE</th>
+                  <th scope="col" class="text-center">SIDE</th>
+                  <th scope="col" class="text-center">LOCATION</th>
+                  <th scope="col" class="text-center">REGION</th>
+                  <th scope="col" class="text-center">CODE</th>
+                  <th scope="col" class="text-center">DATETIME</th>
+                  <th scope="col" class="text-center">DEL</th>
+
+                </tr>
+              </thead>
+              <tbody class="table-group-divider" id="table-body">
+                {% for row in data %}
+                <tr class="table-dark">
+                  <td class="table-dark text-center">{{ row[0] }}</td>
+                  <td class="table-dark text-center">{{ row[1] }}</td>
+                  <td class="table-dark text-center">{{ row[2] }}</td>
+                  <td class="table-dark text-center">{{ row[3] }}</td>
+                  <td class="table-dark text-center">{{ row[4] }}</td>
+                  <td class="table-dark text-center">{{ row[5] }}</td>
+                  <td class="table-dark text-center">{{ row[5] }}</td>
+                  <td class="table-dark text-center">{{ row[6] }}</td>
+                  <td class="table-dark text-center">
+                      <button type="button" class="btn btn-danger delete-button" data-id="{{ row[0] }}">X</button>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal" id="deleteModal" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog"  role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Are you sure you want to delete?</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-close="true" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-info" id="confirmDeleteBtn">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      
+    {% endblock %}
+  </body>
+</html>

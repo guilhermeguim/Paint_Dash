@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/static/fonts/Montserrat/Montserrat-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/static/fonts/Montserrat/Montserrat-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/static/fonts/Montserrat/Montserrat-Italic.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/static/fonts/Montserrat/Montserrat-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+.bg-dark {
+    background-color: #012C5E;
+}
+
+header{
+    width: 100%;
+}
+
+body{
+    background-color: #D0D0D0;
+    font-family: 'Montserrat';
+
+}
+
+/* Modify the background color */
+.navbar-custom {
+    background-color: #012C5E;
+    font-size: 3vw;
+    padding: 1%;
+}
+
+.content-container{
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:3%;
+}
+
+.content-container h1{
+    color: #012C5E;
+    font-weight: bold;
+    font-size: 9vw;
+    display: inline-flex;
+}
+
+/* Modify logo position and  size*/
+.logo {
+    width:100%;
+    padding-right: 25%;
+    padding-left: 0%;
+    box-shadow: inset -0.2rem 0 0 0 #D0D0D0;
+}
+
+.navbar-brand {
+    width: 12vw;
+    display: flex;
+}
+
+
+.navbar-nav .nav-item .nav-link {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: white;
+    margin-left: 30px;
+    padding: 0;
+    padding-top: 0;
+}
+
+.nav-item .nav-link:hover {
+    color:#D0D0D0;
+    box-shadow: inset 0 -0.2rem 0 0 #D0D0D0; 
+}
+
+.nav-item .nav-link.active {
+    color:#D0D0D0;
+    box-shadow: inset 0 -0.2rem 0 0 #D0D0D0; 
+}
+
+/* Tablet em retrato a paisagem e desktop */
+@media (max-width: 1024px) {
+
+}
+
+/* Desktop grande */
+@media (min-width: 1025px)  and (max-width: 1279px) {
+
+}
+
+@media (min-width: 1280px) and (max-width: 1499px){
+    .content-container{
+        margin-left:3%;
+        margin-right:3%;
+        margin-top:2%;
+    }
+    .navbar-brand {
+        width: 6vw;
+        display: flex;
+    }
+
+    .navbar-custom {
+        background-color: #012C5E;
+        font-size: 1.7vw;
+        padding: 1%;
+    }
+
+    /* Modify logo position and  size*/
+    .logo {
+        width:100%;
+        padding-right: 40%;
+        padding-left: 0%;
+        box-shadow: inset -0.2rem 0 0 0 #D0D0D0;
+    }
+
+    .content-container h1{
+        color: #012C5E;
+        font-weight: bold;
+        font-size: 5vw;
+        display: inline-flex;
+    }
+
+
+}
+
+@media (min-width: 1500px){
+    .content-container{
+        margin-left:2%;
+        margin-right:2%;
+        margin-top:1%;
+    }
+    .navbar-brand {
+        width: 5vw;
+        display: flex;
+    }
+
+    .navbar-custom {
+        background-color: #012C5E;
+        font-size: 1vw;
+        padding: 1%;
+    }
+
+    /* Modify logo position and  size*/
+    .logo {
+        width:100%;
+        padding-right: 40%;
+        padding-left: 0%;
+        box-shadow: inset -0.2rem 0 0 0 #D0D0D0;
+    }
+
+    .content-container h1{
+        color: #012C5E;
+        font-weight: bold;
+        font-size: 4vw;
+        display: inline-flex;
+    }
+
+
+}

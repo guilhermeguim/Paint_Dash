@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+  </head>
+  <body>
+    {% extends 'index.html' %} {% set active_page = 'profile' %} {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/profile.css') }}" />
+    <script src="{{ url_for('static', filename = 'js/btn_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+
+    <div class="container">
+        <h1>Profile</h1>
+        <a class="btn btn-primary" href="{{ url_for('profile') }}" role="button">Return</a>
+    </div>
+
+    <div class="user-data">
+      <form  method="post" class="row g-3 needs-validation" action="/edit_route" novalidate>
+
+          <div class="row">
+              <label for="inputHMC" class="form-label">HMC:</label>
+              <input value="{{ data[1] }}" name="hmc" type="text" class="form-control" id="inputHMC" pattern="^[0-9]{8}$" required />
+              <div id="hmcHelp" class="form-text">Ex: 3710XXXX</div>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Use numbers only, maximum length: 8 digits</div>
+          </div>
+          <div class="row">
+              <label for="inputName" class="form-label">Full Name:</label>
+              <input value="{{ data[3] }}" name="name" type="text" class="form-control form-name" id="inputName" pattern="^^[A-Za-z ]+$" required /> 
+              <div id="nameHelp" class="form-text">Type your full name</div>
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Do not use special characters or numbers</div>
+          </div>
+          <div class="row">
+              <div class="col-6">
+                <button type="submit" class="btn btn-primary save-btn">Save</button>
+              </div>
+          </div>
+      </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+
+    {% endblock %}
+  </body>
+</html>
